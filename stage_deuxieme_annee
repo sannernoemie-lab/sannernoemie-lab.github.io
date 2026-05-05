@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 2ère Année - Noémie Sanner</title>
+    <style>
+        /* Styles pour correspondre à ton design actuel */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+        }
 
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* En-tête bleu marine comme ton portfolio */
+        .header-stage {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Barre d'onglets */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: -2px; /* Pour coller au contenu */
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            cursor: pointer;
+            border: none;
+            background: #e9ecef;
+            color: #2c3e50;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            background: white;
+            border-bottom: 3px solid #3498db;
+            color: #3498db;
+        }
+
+        /* Zone de contenu */
+        .content-box {
+            background: white;
+            padding: 30px;
+            border-radius: 0 8px 8px 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            min-height: 300px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Style du Journal de bord */
+        .semaine-card {
+            border-left: 4px solid #3498db;
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .semaine-titre {
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        h2 { color: #2c3e50; margin-top: 0; }
+        
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+
+    <div class="header-stage">
+        <h1>Stage de 1ère Année</h1>
+        <p>Immersion en milieu professionnel</p>
+    </div>
+
+    <div class="tabs">
+        <div class="tab-btn active" onclick="changeTab(event, 'entreprise')">L'entreprise</div>
+        <div class="tab-btn" onclick="changeTab(event, 'journal')">Journal de bord</div>
+    </div>
+
+    <div class="content-box">
+        
+        <div id="entreprise" class="tab-content active">
+            <h2>Présentation de la structure</h2>
+            <p><strong>Nom :</strong> [À remplir]</p>
+            <p><strong>Secteur d'activité :</strong> [Ex: Service Informatique d'une collectivité]</p>
+            <hr>
+            <h3>Environnement Technique</h3>
+            <ul>
+                <li>...</li>
+                <li>...</li>
+                <li>...</li>
+            </ul>
+        </div>
+
+        <div id="journal" class="tab-content">
+            <h2>Suivi des activités</h2>
+            <p>Voici les tâches effectuées durant mon stage, mises à jour chaque semaine.</p>
+
+            <div class="semaine-card">
+                <span class="semaine-titre">Semaine 1</span>
+                <p>...</p>
+            </div>
+
+            <div class="semaine-card">
+                <span class="semaine-titre">Semaine 2</span>
+                <p>...</p>
+            </div>
+
+            </div>
+
+    </div>
+</div>
+
+<script>
+    function changeTab(e, tabId) {
+        // Cacher tous les contenus
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(c => c.classList.remove('active'));
+
+        // Désactiver tous les boutons
+        const btns = document.querySelectorAll('.tab-btn');
+        btns.forEach(b => b.classList.remove('active'));
+
+        // Afficher le bon contenu et activer le bon bouton
+        document.getElementById(tabId).classList.add('active');
+        e.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
