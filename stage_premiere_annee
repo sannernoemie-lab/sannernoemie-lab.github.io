@@ -135,12 +135,12 @@
 
             <div class="semaine-card">
                 <span class="semaine-titre">Semaine 1</span>
-                <p>Installation de postes de travail, découverte de l'Active Directory et configuration de comptes utilisateurs.</p>
+                <p>...</p>
             </div>
 
             <div class="semaine-card">
                 <span class="semaine-titre">Semaine 2</span>
-                <p>Maintenance préventive sur les serveurs de sauvegarde et gestion des tickets GLPI.</p>
+                <p>...</p>
             </div>
 
             </div>
