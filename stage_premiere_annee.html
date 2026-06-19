@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +34,8 @@
         .tabs {
             display: flex;
             gap: 10px;
-            margin-bottom: -2px; /* Pour coller au contenu */
+            margin-bottom: -2px;
+            /* Pour coller au contenu */
         }
 
         .tab-btn {
@@ -58,7 +60,7 @@
             background: white;
             padding: 30px;
             border-radius: 0 8px 8px 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             min-height: 300px;
         }
 
@@ -88,8 +90,11 @@
             font-size: 0.9em;
         }
 
-        h2 { color: #2c3e50; margin-top: 0; }
-        
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
         .back-btn {
             display: inline-block;
             margin-bottom: 20px;
@@ -97,123 +102,203 @@
             color: #2c3e50;
             font-weight: bold;
         }
+
+        /*container*/
+
+        .download-box {
+            background: #f9f9f9;
+            border: 2px dashed #3498db;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+
+        .btn-download:hover {
+            background: #2980b9;
+        }
+
+        .file-info {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: #888;
+        }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Retour à l'accueil</a>
 
-    <div class="header-stage">
-        <h1>Stage de 1ere Année</h1>
-        <p>Immersion en milieu professionnel</p>
+        <div class="header-stage">
+            <h1>Stage de 1ere Année</h1>
+            <p>Immersion en milieu professionnel</p>
+        </div>
+
+        <div class="tabs">
+            <div class="tab-btn active" onclick="changeTab(event, 'entreprise')">L'entreprise</div>
+            <div class="tab-btn" onclick="changeTab(event, 'journal')">Journal de bord</div>
+            <div class="tab-btn" onclick="changeTab(event, 'situation professionnelle 1')">situation professionnelle 1
+            </div>
+            <div class="tab-btn" onclick="changeTab(event, 'situation professionnelle 2')">situation professionnelle 2
+            </div>
+            <div class="tab-btn" onclick="changeTab(event, 'Projet Personnel')">Projet Personnel</div>
+        </div>
+
+        <div class="content-box">
+
+            <div id="entreprise" class="tab-content active">
+                <h2>Présentation de la structure</h2>
+                <p><strong>Nom :</strong> [À remplir]</p>
+                <p><strong>Secteur d'activité :</strong> [Ex: Service Informatique d'une collectivité]</p>
+                <hr>
+                <h3>Environnement Technique</h3>
+                <ul>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                </ul>
+            </div>
+
+            <div id="situation professionnelle 1" class="tab-content">
+                <h2>situation 1</h2>
+                <div class="download-box">
+                    <a href="CV_Noemie_Sanner.pdf" class="btn-download" download>
+                        📥 Télécharger la documentation sur FOG server
+                    </a>
+                    <span class="file-info">Format PDF - 2026</span>
+                </div>
+                <p>...</p>
+            </div>
+
+            <div id="situation professionnelle 2" class="tab-content">
+                <h2>situation 2</h2>
+                <p>...</p>
+                <p>...</p>
+            </div>
+
+            <div id="Projet Personnel" class="tab-content">
+                <h2>Projet Personnel</h2>
+                <h1>Mon projet IA</h1>
+                <p>Vous pouvez télécharger la documentation et les scripts des différentes version ci-dessous</p>
+
+                <div class="download-box">
+                    <a href="CV_Noemie_Sanner.pdf" class="btn-download" download>
+                        📥 Télécharger la documentation
+                    </a>
+                    <span class="file-info">Format PDF - 2026</span>
+                </div>
+                <div class="download-box">
+                    <a href="CV_Noemie_Sanner.pdf" class="btn-download" download>
+                        📥 Télécharger la version 1
+                    </a>
+                    <span class="file-info">Format PDF - 2026</span>
+                </div>
+                <div class="download-box">
+                    <a href="CV_Noemie_Sanner.pdf" class="btn-download" download>
+                        📥 Télécharger la version 2
+                    </a>
+                    <span class="file-info">Format PDF - 2026</span>
+                </div>
+                <div class="download-box">
+                    <a href="CV_Noemie_Sanner.pdf" class="btn-download" download>
+                        📥 Télécharger la version finale
+                    </a>
+                    <span class="file-info">Format PDF - 2026</span>
+                </div>
+            </div>
+            <div id="journal" class="tab-content">
+                <h2>Suivi des activités</h2>
+                <p>Voici les tâches effectuées durant mon stage, mises à jour chaque semaine.</p>
+                <div class="semaine-card">
+                    <span class="semaine-titre">Semaine 1</span>
+                    <p>Préparation et configuration de nouveaux postes utilisateurs sous windows 11, incluant
+                        l'installation
+                        des logiciels necessaires.<br>
+                        Présentation de l'infrastructure réseau de l'entreprise, et familiarisation avec les logiciels
+                        utilisés quotidiennement.<br>
+                        Présentation pour la migration des ordinateurs, qui sont sur Windows 10, à Windows 11, avec les
+                        bonnes pratiques.<br>
+                        Observation de la gestion des tickets, le diagnostic du problème, et leurs résolutions.
+                    </p>
+                </div>
+
+                <div class="semaine-card">
+                    <span class="semaine-titre">Semaine 2</span>
+                    <p>Préparation et configuration de nouveaux ordinateurs pour le personnel, avec les logiciels
+                        necessaires.<br>
+                        Envoi d'ordinateurs pour les filières.<br>
+                        Utilisation de Sysprep pour la capture d'une image destinée au déploiement PXE. Face au blocage
+                        du
+                        déploiement par Microsoft,
+                        qui déprécie l'usage du client WDS (sur Windows 11) pour pousser à utiliser MDT, mise en place
+                        d'un
+                        serveur Linux avec FOG Server.</p>
+                </div>
+
+                <div class="semaine-card">
+                    <span class="semaine-titre">Semaine 3</span>
+                    <p> Préparation d'ordinateurs et solution apporté à certain ticket<br>
+                        Mise en place et configuration de Fog server, test pour le deploiement d'images.<br></br>
+                        Préparation de materiel, et configuration d'Iphone pour les nouveaux salariés</p>
+                </div>
+
+                <div class="semaine-card">
+                    <span class="semaine-titre">Semaine 4</span>
+                    <p>Configuration de nouveaux ordinateurs.<br>
+                        Nouvelle image sysprep réalisée avec un fichier de réponse d'automatisation xml pour passer
+                        l'assistant d'installation Windows(OOBE).<br>
+                        Démontage d'un ordinateur suite à un problème d'alimentation. Cela n'a rien réglé.<br>
+                        Automatisations faites via un script powershell pour des installations d'applications permettant
+                        de
+                        gagner du temps sur la préparation des nouveaux pc.(avec l'aide de l'IA)</p>
+                </div>
+
+                <div class="semaine-card">
+                    <span class="semaine-titre">Semaine 5</span>
+                    <p>Documentation sur Fog Serveur réalisée pour l'entreprise.<br>
+                        Présentation de Fog Serveur.<br>
+                        Préparation d'une commande et résolution d'un ticket concernant l'installation d'une
+                        application.<br>
+                        Réalisation d'un script powershell et utilisation de BGInfo, permettant de voir sur l'écran de
+                        l'utilisateur les informations essentielles de l'ordinateur, permettant de gagner du temps lors
+                        de
+                        la prise en main à distance de celui-ci</p>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
-    <div class="tabs">
-        <div class="tab-btn active" onclick="changeTab(event, 'entreprise')">L'entreprise</div>
-        <div class="tab-btn" onclick="changeTab(event, 'journal')">Journal de bord</div>
-        <div class="tab-btn" onclick="changeTab(event, 'situation professionnelle 1')">situation professionnelle 1</div>
-        <div class="tab-btn" onclick="changeTab(event, 'situation professionnelle 2')">situation professionnelle 2</div>
-        <div class="tab-btn" onclick="changeTab(event, 'Projet Personnel')">Projet Personnel</div>
-    </div>
+    <script>
+        function changeTab(e, tabId) {
+            // Cacher tous les contenus
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.remove('active'));
 
-    <div class="content-box">
-        
-        <div id="entreprise" class="tab-content active">
-            <h2>Présentation de la structure</h2>
-            <p><strong>Nom :</strong> [À remplir]</p>
-            <p><strong>Secteur d'activité :</strong> [Ex: Service Informatique d'une collectivité]</p>
-            <hr>
-            <h3>Environnement Technique</h3>
-            <ul>
-                <li>...</li>
-                <li>...</li>
-                <li>...</li>
-            </ul>
-        </div>
+            // Désactiver tous les boutons
+            const btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(b => b.classList.remove('active'));
 
-        <div id="situation professionnelle 1" class="tab-content">
-            <h2>situation 1</h2>
-            <p>...</p>
-            <p>...</p>
-        </div>
-
-         <div id="situation professionnelle 2" class="tab-content">
-            <h2>situation 2</h2>
-            <p>...</p>
-            <p>...</p>
-        </div>
-        
-        <div id="Projet Personnel" class="tab-content">
-            <h2>Projet Personnel</h2>
-            <p>...</p>
-            <p>...</p>
-        </div>
-        
-        <div id="journal" class="tab-content">
-            <h2>Suivi des activités</h2>
-            <p>Voici les tâches effectuées durant mon stage, mises à jour chaque semaine.</p>
-
-            <div class="semaine-card">
-                <span class="semaine-titre">Semaine 1</span>
-                <p>Préparation et configuration de nouveaux postes utilisateurs sous windows 11, incluant l'installation des logiciels necessaires.<br> 
-                Présentation de l'infrastructure réseau de l'entreprise, et familiarisation avec les logiciels utilisés quotidiennement.<br> 
-                Présentation pour la migration des ordinateurs, qui sont sur Windows 10, à Windows 11, avec les bonnes pratiques.<br>
-                Observation de la gestion des tickets, le diagnostic du problème, et leurs résolutions.
-                </p>
-            </div>
-
-            <div class="semaine-card">
-                <span class="semaine-titre">Semaine 2</span>
-                <p>Préparation et configuration de nouveaux ordinateurs pour le personnel, avec les logiciels necessaires.<br>
-                    Envoi d'ordinateurs pour les filières.<br>
-                    Utilisation de Sysprep pour la capture d'une image destinée au déploiement PXE. Face au blocage du déploiement par Microsoft, 
-                    qui déprécie l'usage du client WDS (sur Windows 11) pour pousser à utiliser MDT, mise en place d'un serveur Linux avec FOG Server.</p>
-            </div>
-
-             <div class="semaine-card">
-                <span class="semaine-titre">Semaine 3</span>
-                <p> Préparation d'ordinateurs et solution apporté à certain ticket<br>
-                   Mise en place et configuration de Fog server, test pour le deploiement d'images.<br></br>
-                   Préparation de materiel, et configuration d'Iphone pour les nouveaux salariés</p>
-             </div>
-
-             <div class="semaine-card">
-                <span class="semaine-titre">Semaine 4</span>
-                <p>Configuration de nouveaux ordinateurs.<br>
-                Nouvelle image sysprep réalisée avec un fichier de réponse d'automatisation xml pour passer l'assistant d'installation Windows(OOBE).<br>
-                Démontage d'un ordinateur suite à un problème d'alimentation. Cela n'a rien réglé.<br>
-                Automatisations faites via un script powershell pour des installations d'applications permettant de gagner du temps sur la préparation des nouveaux pc.(avec l'aide de l'IA)</p>
-             </div>
-
-            <div class="semaine-card">
-                <span class="semaine-titre">Semaine 5</span>
-                <p>Documentation sur Fog Serveur réalisée pour l'entreprise.<br>
-                Présentation de Fog Serveur.<br>
-                Préparation d'une commande et résolution d'un ticket concernant l'installation d'une application.<br>
-                Réalisation d'un script powershell et utilisation de BGInfo, permettant de voir sur l'écran de l'utilisateur les informations essentielles de l'ordinateur, permettant de gagner du temps lors de la prise en main à distance de celui-ci</p>
-            </div>
-
-            </div>
-
-    </div>
-</div>
-
-<script>
-    function changeTab(e, tabId) {
-        // Cacher tous les contenus
-        const contents = document.querySelectorAll('.tab-content');
-        contents.forEach(c => c.classList.remove('active'));
-
-        // Désactiver tous les boutons
-        const btns = document.querySelectorAll('.tab-btn');
-        btns.forEach(b => b.classList.remove('active'));
-
-        // Afficher le bon contenu et activer le bon bouton
-        document.getElementById(tabId).classList.add('active');
-        e.currentTarget.classList.add('active');
-    }
-</script>
+            // Afficher le bon contenu et activer le bon bouton
+            document.getElementById(tabId).classList.add('active');
+            e.currentTarget.classList.add('active');
+        }
+    </script>
 
 </body>
+
 </html>
