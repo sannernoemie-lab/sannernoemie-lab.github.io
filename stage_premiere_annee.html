@@ -175,6 +175,51 @@
 
             <div id="situation professionnelle 1" class="tab-content">
                 <h2>situation 1</h2>
+                <h1><strong><u>Qu'est ce qu'une image ?</u></strong></h1>
+                <p>En informatique, une image système (system image) est une copie de l'état d'un ordinateur sauvegardée sur un support non volatil, 
+                    comme un fichier. 
+                    Généralement, 
+                    ces images sont stockées sur des serveurs qui utilisent le PXE. Le PXE permet à un ordinateur de démarrer à partir d'un serveur distant.
+                </p>
+                <p>Pour faire plus simple, c'est comme une photographie d'un insatnt T de tout ce qu'il y a sur un ordinateur. Son OS, ses applications, ses configurations.<br>
+                Cette photograpie peut être mise sur plein d'autres ordinateurs, faisant des copies d'elle même.</p>
+                <h1><strong><u>L'avantage des images</u></strong></h1>
+                <ul>
+                    <li><strong>Un ordinateur :</strong></li>
+                        <ul>
+                            <li>environ 2 heures de préparation</li>
+                            <li>le nombre de déploiement est limité par le nombre de clé USB bootable</li>
+                        <ul>
+                    <li><strong>Avec le déploiement d'images :</strong></li>
+                        <ul>
+                            <li>entre 10 et 15 minutes</li>
+                            <li>Déploiement de masse possible, pas de limitation due au matériel</li>
+                            <li>Image personnalisée</li>
+                        </ul>
+                </ul>
+                <h1><strong><u>Qu'est-ce-que Fog Project ?</u></strong></h1>
+                <ul>
+                    <li>FOG Project est une solution open source de gestion et de déploiement de postes informatiques.</li>
+                    <li>Il permet de créer, stocker et déployer des images systèmes via le réseau.</li>
+                    <li>Il offre la possibilité de sauvegarder des postes de travail pour les restaurer facilement.</li>
+                    <li>Il permet aussi la gestion des ordinateurs à distance.</li>
+                    <li>C’est une alternative libre aux solutions propriétaires de clonage et de déploiement de systèmes d’exploitation.</li>
+                </ul>
+                <h1><strong><u>Pourquoi utiliser Fog Serveur</u></strong></h1>
+                <ul>
+                    <li>Il est hébergé localement, ce qui permet de garder le contrôle total sur les données et les déploiements.</li>
+                    <li>Il est facile d’utilisation grâce à son interface web intuitive.</li>
+                    <li>Il est compatible avec la gestion de tous les systèmes d’exploitation.</li>
+                    <li>Il constitue une alternative aux solutions Microsoft, qui privilégie désormais ses services cloud payants.<br>
+                    De plus l'alternative de Micrsoft ne gère pas des "images" mais reconfigure uniquement votre ordinateur et ne gère que ce système d'exploitaation.<br>
+                    Impposible donc de réparer un système d'exploitation endommagé en utilisant une image via cette alternative.(une image efface tout ce qu'il y avait avant, pour s'installer ensuite)</li>
+                    <li>La solution de serveur MDT n’est plus maintenu ni supporté officiellement par Microsoft.</li>
+                    <li>La solution de serveur WDS est devenu déprécié et l’utilisation des images au format .wim (le format basique pour un image) est de plus en plus limitée.</li>
+                </ul>
+                <p>Typiquement, au cours de mon stage, après avoir réalisé une image en .wim, et l'avoir envoyé sur le serveur, au moment de la déployer Microsoft l'a bloqué.
+                Après avoir esssayé la méthode d'un serveur MDT, nous avons rencontré des problèmes via des configurations.
+                Fog Serveur constituait donc une très bonne alternative, facile à mettre en place et avec une grande facilité de prise en main.</p>
+
                 <div class="download-box">
                     <a href="Fog server.pdf" class="btn-download" download>
                         📥 Télécharger la documentation sur FOG server
